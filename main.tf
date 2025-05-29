@@ -6,6 +6,7 @@ resource "azurerm_resource_group" "rg-env" {
 
 
 resource "azurerm_storage_account" "sa-env" {
+     depends_on = [ azurerm_resource_group.rg-env ]
   name                     = "stenv001"
   resource_group_name      = "rg-env-001"
   location                 = "eastus"
